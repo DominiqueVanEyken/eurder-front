@@ -10,7 +10,8 @@ import {ItemGalleryComponent} from "./layout/item-gallery/item-gallery.component
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent
+    LayoutComponent,
+    ItemGalleryComponent
   ],
   imports: [
     BrowserModule,

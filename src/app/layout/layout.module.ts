@@ -2,11 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ItemGalleryComponent } from './item-gallery/item-gallery.component';
-import { LayoutComponent } from './layout/layout.component';
-import {RouterOutlet} from "@angular/router";
-
-
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
     declarations: [
@@ -18,7 +14,8 @@ import {RouterOutlet} from "@angular/router";
     FooterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ]
 })
 export class LayoutModule { }

@@ -4,68 +4,13 @@
 
     <ul class="card-list">
       <!--TODO: implement with *ngFor-->
-      <li class="card">
-        <div class="card-title">Name of Item</div>
+      <li class="card" *ngFor="let item of items$ | async">
+        <div class="card-title">{{item.name}}</div>
         <img class="card-image" src="../../../assets/img/item-image.png" alt="item image">
         <div class="card-footer">
-          <div>Price: &euro; XXX.YY</div>
+          <div>Price: &euro; {{item.price.price}}</div>
           <div class="stock">
-            <span>High</span>
-            <img class="icon" src="../../../assets/img/warning-icon.png" alt="warning">
-          </div>
-        </div>
-      </li>
-      <li class="card">
-        <div class="card-title">Name of Item</div>
-        <img class="card-image" src="../../../assets/img/item-image.png" alt="item image">
-        <div class="card-footer">
-          <div>Price: &euro; XXX.YY</div>
-          <div class="stock">
-            <span>High</span>
-            <img class="icon" src="../../../assets/img/warning-icon.png" alt="warning">
-          </div>
-        </div>
-      </li>
-      <li class="card">
-        <div class="card-title">Name of Item</div>
-        <img class="card-image" src="../../../assets/img/item-image.png" alt="item image">
-        <div class="card-footer">
-          <div>Price: &euro; XXX.YY</div>
-          <div class="stock">
-            <span>High</span>
-            <img class="icon" src="../../../assets/img/warning-icon.png" alt="warning">
-          </div>
-        </div>
-      </li>
-      <li class="card">
-        <div class="card-title">Name of Item</div>
-        <img class="card-image" src="../../../assets/img/item-image.png" alt="item image">
-        <div class="card-footer">
-          <div>Price: &euro; XXX.YY</div>
-          <div class="stock">
-            <span>High</span>
-            <img class="icon" src="../../../assets/img/warning-icon.png" alt="warning">
-          </div>
-        </div>
-      </li>
-      <li class="card">
-        <div class="card-title">Name of Item</div>
-        <img class="card-image" src="../../../assets/img/item-image.png" alt="item image">
-        <div class="card-footer">
-          <div>Price: &euro; XXX.YY</div>
-          <div class="stock">
-            <span>High</span>
-            <img class="icon" src="../../../assets/img/warning-icon.png" alt="warning">
-          </div>
-        </div>
-      </li>
-      <li class="card">
-        <div class="card-title">Name of Item</div>
-        <img class="card-image" src="../../../assets/img/item-image.png" alt="item image">
-        <div class="card-footer">
-          <div>Price: &euro; XXX.YY</div>
-          <div class="stock">
-            <span>High</span>
+            <span>{{item.stockStatus}}</span>
             <img class="icon" src="../../../assets/img/warning-icon.png" alt="warning">
           </div>
         </div>
