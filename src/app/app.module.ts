@@ -10,16 +10,12 @@ import {FormsModule} from "@angular/forms";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {AuthenticationInterceptor} from "./layout/keycloak/authentication.interceptor";
-import { ErrorComponent } from './error/error.component';
-import { BackendUnavailableComponent } from './backend-unavailable/backend-unavailable.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    ItemGalleryComponent,
-    ErrorComponent,
-    BackendUnavailableComponent,
+    ItemGalleryComponent
   ],
   imports: [
     BrowserModule,
