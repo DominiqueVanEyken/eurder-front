@@ -1,23 +1,23 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {HeaderComponent} from './header/header.component';
+import {FooterComponent} from './footer/footer.component';
 import {HttpClientModule} from "@angular/common/http";
-import { ItemFilterPipe } from './item-gallery/item-filter.pipe';
+import {ItemFilterPipe} from './item-gallery/item-filter.pipe';
 import {ReactiveFormsModule} from "@angular/forms";
-import { LoginComponent } from './login/login.component';
+import {LoginComponent} from './login/login.component';
 import {ErrorComponent} from "./error/error.component";
 import {BackendUnavailableComponent} from "./backend-unavailable/backend-unavailable.component";
 
 @NgModule({
-    declarations: [
-        HeaderComponent,
-        FooterComponent,
-        ItemFilterPipe,
-        LoginComponent,
-      ErrorComponent,
-      BackendUnavailableComponent,
-    ],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    ItemFilterPipe,
+    LoginComponent,
+    ErrorComponent,
+    BackendUnavailableComponent,
+  ],
   exports: [
     HeaderComponent,
     FooterComponent,
@@ -29,4 +29,5 @@ import {BackendUnavailableComponent} from "./backend-unavailable/backend-unavail
     ReactiveFormsModule
   ]
 })
-export class LayoutModule { }
+export class LayoutModule {
+}

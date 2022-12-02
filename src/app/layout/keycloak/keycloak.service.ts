@@ -28,7 +28,6 @@ export class KeycloakService {
   }
 
   isLoggedIn(): boolean {
-    console.log(this.getToken())
     if(this.getToken() === null) {
       return false
     }
