@@ -7,21 +7,29 @@ import {AppRoutingModule} from "./app-routing.module";
 import {LayoutComponent} from "./layout/layout/layout.component";
 import {ItemGalleryComponent} from "./layout/item-gallery/item-gallery.component";
 import {FormsModule} from "@angular/forms";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {AuthenticationInterceptor} from "./layout/keycloak/authentication.interceptor";
+import { ErrorComponent } from './error/error.component';
+import { BackendUnavailableComponent } from './backend-unavailable/backend-unavailable.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    ItemGalleryComponent
+    ItemGalleryComponent,
+    ErrorComponent,
+    BackendUnavailableComponent,
   ],
   imports: [
     BrowserModule,
     LayoutModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
-  providers: [],
-  bootstrap: [AppComponent, LayoutComponent, ItemGalleryComponent]
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true}],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

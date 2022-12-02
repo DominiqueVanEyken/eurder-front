@@ -5,12 +5,14 @@ import { FooterComponent } from './footer/footer.component';
 import {HttpClientModule} from "@angular/common/http";
 import { ItemFilterPipe } from './item-gallery/item-filter.pipe';
 import {ReactiveFormsModule} from "@angular/forms";
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
     declarations: [
         HeaderComponent,
         FooterComponent,
-        ItemFilterPipe
+        ItemFilterPipe,
+        LoginComponent
     ],
   exports: [
     HeaderComponent,

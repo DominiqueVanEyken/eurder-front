@@ -10,7 +10,7 @@ export class ItemFilterPipe implements PipeTransform {
     if (items === null) {
       return items;
     }
-    return items.filter(items => items.name.toLowerCase().includes(filterValue.toLowerCase()));
+    return items.filter(items => items.name.toLowerCase().startsWith(filterValue.toLowerCase()));
   }
 
 }
