@@ -11,6 +11,7 @@ import {Item} from "../../model/Item";
 export class ItemGalleryComponent implements OnInit{
   private readonly IMG_PREFIX:string = '../../../assets/img/'
   items$!: Observable<any>;
+  searchText: string = '';
 
   constructor(private itemService: ItemsService) {
   }
@@ -23,6 +24,7 @@ export class ItemGalleryComponent implements OnInit{
     this.items$ = this.itemService.getItems;
   }
 
+  // TODO: Update after refactor Eurder backend
   getStockStatusValue(item: Item): string {
     if (item.stockStatus.includes('STOCK_LOW')) {
       return 'LOW';

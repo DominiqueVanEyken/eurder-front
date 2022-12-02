@@ -6,6 +6,7 @@ import {LayoutModule} from "./layout/layout.module";
 import {AppRoutingModule} from "./app-routing.module";
 import {LayoutComponent} from "./layout/layout/layout.component";
 import {ItemGalleryComponent} from "./layout/item-gallery/item-gallery.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,10 +17,11 @@ import {ItemGalleryComponent} from "./layout/item-gallery/item-gallery.component
   imports: [
     BrowserModule,
     LayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, LayoutComponent, ItemGalleryComponent]
 })
 export class AppModule {
 }
