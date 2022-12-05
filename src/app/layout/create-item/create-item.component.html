@@ -6,23 +6,28 @@
   <form class="container" [formGroup]="itemForm" (ngSubmit)="onSubmit()">
     <div class="container">
       <label for="name">Name</label>
-      <input id="name" class="form-control" formControlName="name">
+      <input type="text" id="name" class="form-control" formControlName="name" required >
+        <div *ngIf="name" class="invalid-feedback text-danger">Name is required</div>
     </div>
     <div class="container">
       <label for="description">Description</label>
-      <input id="description" class="form-control" formControlName="description">
+      <textarea id="description" class="form-control" formControlName="description" required></textarea>
+      <div class="justify-content-end">{{counter}}/255</div>
+      <div class="invalid-feedback text-danger">Description is required</div>
     </div>
     <div class="container row align-content-start">
       <div class="col-12 col-md-3">
         <label for="price">Price</label>
         <div class="input-group">
           <span class="input-group-text">€</span>
-          <input id="price" class="form-control" formControlName="price">
+          <input type="number" id="price" class="form-control" formControlName="price">
+          <div class="invalid-feedback text-danger">Price is required</div>
         </div>
       </div>
       <div class="col-12 col-md-3">
         <label for="amount">Amount of Stock</label>
-        <input id="amount" class="form-control" formControlName="amount">
+        <input type="number" id="amount" class="form-control" formControlName="amount">
+        <div class="invalid-feedback text-danger">Amount is required</div>
       </div>
     </div>
 
