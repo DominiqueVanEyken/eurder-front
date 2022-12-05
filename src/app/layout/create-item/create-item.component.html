@@ -1,1 +1,29 @@
-<p>create-item works!</p>
+<section class="container" [formGroup]="itemForm">
+  <div class="container">
+    <label for="name">Name</label>
+    <input id="name" class="form-control" formControlName="name">
+  </div>
+  <div class="container">
+    <label for="description">Description</label>
+    <input id="description" class="form-control" formControlName="description">
+  </div>
+  <div class="container row align-content-start">
+    <div class="col-12 col-md-3">
+      <label for="price">Price</label>
+      <div class="input-group">
+        <span class="input-group-text">€</span>
+        <input id="price" class="form-control" formControlName="price">
+      </div>
+    </div>
+    <div class="col-12 col-md-3">
+      <label for="amount">Amount of Stock</label>
+      <input id="amount" class="form-control" formControlName="amount">
+    </div>
+  </div>
+
+  <div class="container row">
+  <input type="submit" class="btn btn-success col col-md 9" value="Create item">
+  <input type="submit" class="btn btn-secondary col col-md-3" value="Cancel" [routerLink]="''">
+  </div>
+
+</section>

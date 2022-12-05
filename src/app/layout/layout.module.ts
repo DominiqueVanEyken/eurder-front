@@ -9,6 +9,7 @@ import {LoginComponent} from './login/login.component';
 import {ErrorComponent} from "./error/error.component";
 import {BackendUnavailableComponent} from "./backend-unavailable/backend-unavailable.component";
 import { CreateItemComponent } from './create-item/create-item.component';
+import {RouterLink} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -25,11 +26,12 @@ import { CreateItemComponent } from './create-item/create-item.component';
     FooterComponent,
     ItemFilterPipe
   ],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    ReactiveFormsModule
-  ]
+    imports: [
+        CommonModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        RouterLink
+    ]
 })
 export class LayoutModule {
 }
