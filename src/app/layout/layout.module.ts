@@ -8,6 +8,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {LoginComponent} from './login/login.component';
 import {ErrorComponent} from "./error/error.component";
 import {BackendUnavailableComponent} from "./backend-unavailable/backend-unavailable.component";
+import { CreateItemComponent } from './create-item/create-item.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {BackendUnavailableComponent} from "./backend-unavailable/backend-unavail
     LoginComponent,
     ErrorComponent,
     BackendUnavailableComponent,
+    CreateItemComponent,
   ],
   exports: [
     HeaderComponent,

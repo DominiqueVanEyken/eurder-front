@@ -1,8 +1,12 @@
 <main>
   <section>
-    <div class="row section-title">
-      <h3 class="col-4">Items</h3>
-      <input id="search" class="form-control col-1" placeholder="filter by name" [(ngModel)]="searchText">
+    <div class="container">
+      <div class="row section-title">
+        <h3 class="col-12 col-sm">Items</h3>
+        <a class="btn btn-primary col-12 col-sm" [routerLink]="'create-item'">Create item</a>
+        <input id="search" class="form-control ps-4 col-12 col-sm ms-3" placeholder="filter by name"
+               [(ngModel)]="searchText">
+      </div>
     </div>
 
     <ul class="card-list">
