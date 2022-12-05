@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Observable} from "rxjs";
 import {ItemsService} from "../../service/items.service";
 import {Item} from "../../model/Item";
+import {KeycloakService} from "../keycloak/keycloak.service";
 
 @Component({
   selector: 'app-item-gallery',
@@ -13,7 +14,7 @@ export class ItemGalleryComponent implements OnInit{
   items$!: Observable<any>;
   searchText: string = '';
 
-  constructor(private itemService: ItemsService) {
+  constructor(private itemService: ItemsService, protected keycloakService: KeycloakService) {
   }
 
   ngOnInit(): void {

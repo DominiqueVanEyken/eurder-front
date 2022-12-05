@@ -28,10 +28,7 @@ export class KeycloakService {
   }
 
   isLoggedIn(): boolean {
-    if(this.getToken() === null) {
-      return false
-    }
-    return true;
+    return this.getToken() !== null;
   }
 
   logIn(loginData: any): Observable<KeycloakTokenResponse> {

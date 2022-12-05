@@ -8,7 +8,7 @@ import {KeycloakTokenResponse} from './keycloakTokenResponse';
 })
 export class HttpKeycloakService {
 
-  private url = `https://keycloak.switchfully.com/auth/realms/java-sep2022/protocol/openid-connect/token`;
+  private url = `https://keycloak.switchfully.com/auth/realms/eurder-dompie/protocol/openid-connect/token`;
   private httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'})
   };
@@ -17,12 +17,11 @@ export class HttpKeycloakService {
   }
 
   logIn(loginData: any): Observable<KeycloakTokenResponse> {
-
     const body = new URLSearchParams();
     body.set('username', loginData.username);
     body.set('password', loginData.password);
-    body.set('client_id', 'petinder');
-    body.set('client_secret', 'OzoAvHIltUbICGtpA6kP7W6ZXogZHWZc');
+    body.set('client_id', 'eurder');
+    body.set('client_secret', 'jOgnpBeDi44UWy4cwj81xp6oYkx6TRQH');
     body.set('grant_type', 'password');
     return this.http.post<KeycloakTokenResponse>(this.url, body.toString(), this.httpOptions);
   }

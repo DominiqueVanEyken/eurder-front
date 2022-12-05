@@ -14,33 +14,30 @@ export class AuthenticationInterceptor implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // if (!this.keycloakService.isLoggedIn()) {
-    //   this.router.navigateByUrl('/login');
-    //   return next.handle(req);
-    // }
-    //
-    // if (this.router.url === '/login') {
-    //   return next.handle(req);
-    // }
-
+    if (!this.keycloakService.isLoggedIn()) {
+      this.router.navigateByUrl('/login');
+      return next.handle(req);
+    }
+    if (this.router.url === '/login') {
+      return next.handle(req);
+    }
     if(this.keycloakService.isLoggedIn())  {
       req = req.clone({
         setHeaders: {
           Authorization: `Bearer ${this.keycloakService.getToken()}`
         }
       })
-
     }
-
     return next.handle(req)
-      // .pipe(
-      // catchError((err: HttpErrorResponse) => {
-      //   if (err.status === 403 || err.status === 401) {
-      //     this.router.navigateByUrl('/error');
-      //   } else if (err.status === 0) {
-      //     this.router.navigateByUrl('/backend-unavailable');
-      //   }
-      //   return throwError(err);
-      // }));
+      .pipe(
+      catchError((err: HttpErrorResponse) => {
+        if (err.status === 403 || err.status === 401) {
+          localStorage.removeItem('access_token')
+          this.router.navigateByUrl('/error');
+        } else if (err.status === 0) {
+          this.router.navigateByUrl('/backend-unavailable');
+        }
+        return throwError(err);
+      }));
   }
 }
